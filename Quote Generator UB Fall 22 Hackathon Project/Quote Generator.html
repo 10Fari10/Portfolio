@@ -1,0 +1,178 @@
+<html>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Island+Moments&family=Open+Sans&family=Roboto+Mono:wght@100&family=Rubik+Puddles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <style>   
+    body{
+      background-image:url("https://png.pngtree.com/thumb_back/fh260/background/20190223/ourmid/pngtree-fresh-sweet-watercolor-soft-gradient-border-background-colorgradientsimpleframe-image_75501.jpg");
+      background-size: cover;
+    }
+font{
+    font-family: 'Abril Fatface', cursive;
+font-family: 'Island Moments', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Rubik Puddles', cursive;
+}
+.square {
+  height: 600px;
+  width: 600px;
+  border-color: #000000;
+  border-style:solid;
+  border-width:3px;
+  margin-left: 425px;
+  margin-top: 100px;
+  opacity:0.8;
+  text-align:center;
+
+
+}
+
+img{
+	width: 50%;
+	height: 50%; 
+	border: 1px solid #000;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 25px;
+}
+.h{
+  margin-left: 100px;
+  margin-top: 50px;
+  text-align:center;
+}
+.pretty{
+  background-color:rgb(210, 205, 253);
+  height: 200x;
+  width: 300px;
+  font-size: 30px;
+}
+.prettier{
+  background-color:rgb(121, 106, 255);
+  height: 200x;
+  width: 300px;
+  opacity:0.8;
+  font-size: 30px;
+}
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 15px;
+  border-radius: 5px;
+  background: #f6eaff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .5s;
+  transition: opacity .5s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(131, 129, 173);
+
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(131, 129, 173);
+}
+.align{
+  margin-left: 50px;
+}
+        </style>
+        <body>
+            <h1 style="text-align:center;border: 5px solid black;background-color:wheat;font-family: 'Zen Antique Soft', serif;">Quote Generator</h1>
+           
+            <select name="font" id="fonts" class="pretty" style="margin-left: 400px;">
+              <option style="font-family: 'Zen Antique Soft', serif;">Select Font</option>
+                <option value="Abril Fatface" style="font-family: 'Abril Fatface', cursive">Abril Fatface</option>
+                <option value="Island Moments" style="font-family: 'Island Moments', cursive">Island Moments</option>
+                <option value="Roboto Mono" style="font-family: 'Roboto Mono', monospace">Roboto Mono</option>
+                <option value="Open Sans" style = "font-family: 'Open Sans', sans-serif"> Open Sans</option>
+                <option value="Rubik Puddles" style = "font-family: 'Rubik Puddles', cursive">Rubik Puddles</option>
+              </select>
+              
+              <select name="color" id="colors" class="pretty ">
+                <option style="font-family:'Zen Antique Soft', serif;">Select Font Color</option>
+                <option value="Red" style="color: red;">Red</option>
+                <option value="Pink" style= "color:Pink;">Pink</option>
+                <option value="Blue" style= "color:Blue;">Blue</option>
+                <option value="Blue" style= "color:black;">Black</option>
+                <option value="White" style= "color:black;"> White </option>
+                <option value="Orange" style= "color:Orange;">Orange </option>
+                <option value="Gray" style= "color:gray;">Gray</option>
+                <option value="Light Blue" style= "color:lightblue;">Light blue</option>
+              </select>
+
+             
+              <br><br>
+                <input type="range" min="1" max="100" value="50" class="slider " id="fontSize" style="margin-left: 350px;">
+              <br><br>
+                <button onclick = "myQuote()" class="prettier" style="margin-left: 550px;"> Make me a quote</button>
+
+                <div class="square" id = "quote" style="margin-top: 100px;"><h1 class="h"></h1></div>
+                
+                <h1 style="margin-left:600px ;">Brought to you by:</h1></h1><img style="width: 50px; height: 50px; border: 1px solid #000; margin-left: 700px;" src="https://media.giphy.com/media/BSx6mzbW1ew7K/giphy.gif?cid=ecf05e476urqkzurwbenceo6hzm4g8doqbswurjmxhpyfw2t&rid=giphy.gif&ct=g" />
+                
+
+                
+                
+       </body>         
+        
+    <script>
+    function myQuote(){
+        let quote = prompt("Put your quote down below :)", "Your Quote");
+        let text = document.getElementById("quote");
+        colorSelect();
+        f();
+        size();
+        text["innerHTML"] = quote
+        
+  
+       }
+       function f(){
+    let g=document.getElementById("fonts").value;
+    if (g==="Roboto Mono"){
+    document.getElementById("quote").style.fontFamily = "Roboto Mono, monospace";
+    }
+    else if (g==="Island Moments"){
+    document.getElementById("quote").style.fontFamily = "Island Moments, cursive";
+    }
+    else if (g==="Abril Fatface"){
+    document.getElementById("quote").style.fontFamily = "Abril Fatface, cursive";
+    }
+    else if (g==="Open Sans"){
+    document.getElementById("quote").style.fontFamily = "Open Sans, sans-serif";
+    }
+    else if (g==="Rubik Puddles"){
+    document.getElementById("quote").style.fontFamily = "Rubik Puddles, cursive";
+    }
+  }
+
+  function colorSelect() {
+    document.getElementById("quote").style.color =
+                document.getElementById("colors").value;
+       }
+       
+       
+
+       function size(){
+       document.getElementById("quote").style.fontSize=document.getElementById("fontSize").value;
+       }
+       
+
+        </script>
+</html>
